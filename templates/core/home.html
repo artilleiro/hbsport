@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}HBSport | Mecánica y chapa-pintura{% endblock %}
+
+{% block content %}
+<header class="hero" id="inicio">
+    <nav class="nav container">
+        <ul class="menu">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#quienes-somos">Quiénes somos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#ubicacion">Dónde estamos</a></li>
+        </ul>
+    </nav>
+    <div class="hero-body container hero-layout">
+        <div>
+            <p class="tag">Taller multimarca</p>
+            <h1>Mecánica y chapa-pintura con trato cercano y resultados profesionales</h1>
+            <p class="lead">
+                En HBSport cuidamos tu vehículo como si fuera nuestro: diagnósticos claros, reparación honesta y acabados impecables.
+            </p>
+            <div class="hero-cta">
+                <a class="btn btn-primary" href="#contacto">Pedir cita</a>
+                <a class="btn btn-ghost" href="https://wa.me/34659667332" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+        </div>
+        <img class="hero-logo-image" src="{% static 'images/hbsport.png' %}" alt="Logo de HBSport">
+    </div>
+</header>
+
+<main>
+    <section class="section container" id="servicios">
+        <h2>Servicios</h2>
+        <div class="services-grid">
+            <article class="card">
+                <h3>Escapes</h3>
+                <p>Montaje, reparación y homologación para mejorar rendimiento y sonido con total seguridad.</p>
+            </article>
+            <article class="card">
+                <h3>Mecánica</h3>
+                <p>Diagnosis y reparación completa de motor, frenos, transmisión y mantenimiento general.</p>
+            </article>
+            <article class="card">
+                <h3>Neumáticos</h3>
+                <p>Cambio de ruedas y equilibrado para una conducción precisa y estable.</p>
+            </article>
+            <article class="card">
+                <h3>Suspensiones</h3>
+                <p>Revisión y sustitución de amortiguadores, muelles y componentes de suspensión.</p>
+            </article>
+            <article class="card">
+                <h3>Chapa y pintura</h3>
+                <p>Reparación de golpes, pintura completa y retoques con acabados profesionales.</p>
+            </article>
+            <article class="card">
+                <h3>Pulidos</h3>
+                <p>Corrección de pintura y pulido para recuperar brillo, profundidad y presencia.</p>
+            </article>
+            <article class="card">
+                <h3>Restauraciones</h3>
+                <p>Trabajos de recuperación integral para devolver vida y estilo a tu vehículo.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section section-soft" id="quienes-somos">
+        <div class="container">
+            <h2>Quiénes somos</h2>
+            <p>
+                HBSport es un taller local especializado en mecánica y chapa-pintura. Apostamos por la transparencia,
+                la comunicación directa y un trabajo bien hecho desde el primer día.
+            </p>
+        </div>
+    </section>
+
+    <section class="section container" id="contacto">
+        <h2>Contacto</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Datos de contacto</h3>
+                <p><strong>Teléfono / WhatsApp:</strong> +34 659 66 73 32</p>
+                <p><strong>Horario:</strong> Lunes a viernes, 8:00 a 17:00</p>
+            </div>
+            <div class="card" id="ubicacion">
+                <h3>Dónde estamos</h3>
+                <p>San Cibrao das Viñas, Ourense</p>
+                <p>
+                    <a class="map-link" href="https://maps.app.goo.gl/ZF8ri1K6f6GwHktw5?g_st=ic" target="_blank" rel="noopener noreferrer">
+                        Abrir en Google Maps
+                    </a>
+                </p>
+                <p>Trabajamos con cita previa para darte atención rápida y personalizada.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-wrap">
+        <p>© {% now "Y" %} HBSport. Todos los derechos reservados.</p>
+        <div class="social">
+            <a href="https://www.instagram.com/__hbsport?igsh=MWhiNzRnNnV6b2Rn" target="_blank" rel="noopener noreferrer" aria-label="Instagram de HBSport">Instagram</a>
+        </div>
+    </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34659667332" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    WhatsApp
+</a>
+{% endblock %}
