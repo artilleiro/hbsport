@@ -1,9 +1,17 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}HBSport | Mecánica y chapa-pintura{% endblock %}
-
-{% block content %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HBSport | Mecánica y chapa-pintura</title>
+    <meta name="description" content="Taller HBSport: mecánica y chapa-pintura en un solo lugar. Calidad, cercanía y rapidez.">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
 <header class="hero" id="inicio">
     <nav class="nav container">
         <ul class="menu">
@@ -25,7 +33,7 @@
                 <a class="btn btn-ghost" href="https://wa.me/34659667332" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
         </div>
-        <img class="hero-logo-image" src="{% static 'images/hbsport.png' %}" alt="Logo de HBSport">
+        <img class="hero-logo-image" src="assets/images/hbsport.png" alt="Logo de HBSport">
     </div>
 </header>
 
@@ -43,7 +51,7 @@
             </article>
             <article class="card">
                 <h3>Neumáticos</h3>
-                <p>Cambio de ruedas y equilibrado para una conducción precisa y estable.</p>
+                <p>Cambio de ruedas, equilibrado y alineación para una conducción precisa y estable.</p>
             </article>
             <article class="card">
                 <h3>Suspensiones</h3>
@@ -98,7 +106,7 @@
 
 <footer class="footer">
     <div class="container footer-wrap">
-        <p>© {% now "Y" %} HBSport. Todos los derechos reservados.</p>
+        <p>© 2026 HBSport. Todos los derechos reservados.</p>
         <div class="social">
             <a href="https://www.instagram.com/__hbsport?igsh=MWhiNzRnNnV6b2Rn" target="_blank" rel="noopener noreferrer" aria-label="Instagram de HBSport">Instagram</a>
         </div>
@@ -108,4 +116,5 @@
 <a class="wa-float" href="https://wa.me/34659667332" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
     WhatsApp
 </a>
-{% endblock %}
+</body>
+</html>
