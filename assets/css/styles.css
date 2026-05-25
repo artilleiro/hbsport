@@ -55,6 +55,7 @@ a {
     justify-content: flex-end;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -84,6 +85,27 @@ a {
 }
 
 .menu a:hover {
+    color: var(--brand);
+}
+
+.lang-switch {
+    display: inline-flex;
+    border: 1px solid #2c4637;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.lang-btn {
+    background: transparent;
+    color: var(--muted);
+    border: 0;
+    padding: 0.35rem 0.6rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lang-btn.active {
+    background: #11301a;
     color: var(--brand);
 }
 
@@ -255,6 +277,10 @@ h1 {
 @media (max-width: 860px) {
     .menu {
         display: none;
+    }
+
+    .nav {
+        justify-content: flex-end;
     }
 
     .hero-layout {

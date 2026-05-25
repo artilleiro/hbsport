@@ -15,21 +15,25 @@
 <header class="hero" id="inicio">
     <nav class="nav container">
         <ul class="menu">
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#quienes-somos">Quiénes somos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#ubicacion">Dónde estamos</a></li>
+            <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="#quienes-somos" data-i18n="nav_about">Quiénes somos</a></li>
+            <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
+            <li><a href="#ubicacion" data-i18n="nav_location">Dónde estamos</a></li>
         </ul>
+        <div class="lang-switch" aria-label="Idioma">
+            <button class="lang-btn active" type="button" data-lang="es">ES</button>
+            <button class="lang-btn" type="button" data-lang="gl">GL</button>
+        </div>
     </nav>
     <div class="hero-body container hero-layout">
         <div>
-            <p class="tag">Taller multimarca</p>
-            <h1>Mecánica y chapa-pintura con trato cercano y resultados profesionales</h1>
-            <p class="lead">
+            <p class="tag" data-i18n="tag">Taller multimarca</p>
+            <h1 data-i18n="hero_title">Mecánica y chapa-pintura con trato cercano y resultados profesionales</h1>
+            <p class="lead" data-i18n="hero_lead">
                 En HBSport cuidamos tu vehículo como si fuera nuestro: diagnósticos claros, reparación honesta y acabados impecables.
             </p>
             <div class="hero-cta">
-                <a class="btn btn-primary" href="#contacto">Pedir cita</a>
+                <a class="btn btn-primary" href="#contacto" data-i18n="cta_booking">Pedir cita</a>
                 <a class="btn btn-ghost" href="https://wa.me/34659667332" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
         </div>
@@ -39,43 +43,43 @@
 
 <main>
     <section class="section container" id="servicios">
-        <h2>Servicios</h2>
+        <h2 data-i18n="services_title">Servicios</h2>
         <div class="services-grid">
             <article class="card">
-                <h3>Escapes</h3>
-                <p>Montaje, reparación y homologación para mejorar rendimiento y sonido con total seguridad.</p>
+                <h3 data-i18n="s1_t">Escapes</h3>
+                <p data-i18n="s1_d">Montaje, reparación y homologación para mejorar rendimiento y sonido con total seguridad.</p>
             </article>
             <article class="card">
-                <h3>Mecánica</h3>
-                <p>Diagnosis y reparación completa de motor, frenos, transmisión y mantenimiento general.</p>
+                <h3 data-i18n="s2_t">Mecánica</h3>
+                <p data-i18n="s2_d">Diagnosis y reparación completa de motor, frenos, transmisión y mantenimiento general.</p>
             </article>
             <article class="card">
-                <h3>Neumáticos</h3>
-                <p>Cambio de ruedas, equilibrado y alineación para una conducción precisa y estable.</p>
+                <h3 data-i18n="s3_t">Neumáticos</h3>
+                <p data-i18n="s3_d">Cambio de ruedas, equilibrado y alineación para una conducción precisa y estable.</p>
             </article>
             <article class="card">
-                <h3>Suspensiones</h3>
-                <p>Revisión y sustitución de amortiguadores, muelles y componentes de suspensión.</p>
+                <h3 data-i18n="s4_t">Suspensiones</h3>
+                <p data-i18n="s4_d">Revisión y sustitución de amortiguadores, muelles y componentes de suspensión.</p>
             </article>
             <article class="card">
-                <h3>Chapa y pintura</h3>
-                <p>Reparación de golpes, pintura completa y retoques con acabados profesionales.</p>
+                <h3 data-i18n="s5_t">Chapa y pintura</h3>
+                <p data-i18n="s5_d">Reparación de golpes, pintura completa y retoques con acabados profesionales.</p>
             </article>
             <article class="card">
-                <h3>Pulidos</h3>
-                <p>Corrección de pintura y pulido para recuperar brillo, profundidad y presencia.</p>
+                <h3 data-i18n="s6_t">Pulidos</h3>
+                <p data-i18n="s6_d">Corrección de pintura y pulido para recuperar brillo, profundidad y presencia.</p>
             </article>
             <article class="card">
-                <h3>Restauraciones</h3>
-                <p>Trabajos de recuperación integral para devolver vida y estilo a tu vehículo.</p>
+                <h3 data-i18n="s7_t">Restauraciones</h3>
+                <p data-i18n="s7_d">Trabajos de recuperación integral para devolver vida y estilo a tu vehículo.</p>
             </article>
         </div>
     </section>
 
     <section class="section section-soft" id="quienes-somos">
         <div class="container">
-            <h2>Quiénes somos</h2>
-            <p>
+            <h2 data-i18n="about_title">Quiénes somos</h2>
+            <p data-i18n="about_desc">
                 HBSport es un taller local especializado en mecánica y chapa-pintura. Apostamos por la transparencia,
                 la comunicación directa y un trabajo bien hecho desde el primer día.
             </p>
@@ -83,22 +87,22 @@
     </section>
 
     <section class="section container" id="contacto">
-        <h2>Contacto</h2>
+        <h2 data-i18n="contact_title">Contacto</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>Datos de contacto</h3>
-                <p><strong>Teléfono / WhatsApp:</strong> +34 659 66 73 32</p>
-                <p><strong>Horario:</strong> Lunes a viernes, 8:00 a 17:00</p>
+                <h3 data-i18n="contact_data">Datos de contacto</h3>
+                <p><strong data-i18n="phone_label">Teléfono / WhatsApp:</strong> +34 659 66 73 32</p>
+                <p><strong data-i18n="hours_label">Horario:</strong> <span data-i18n="hours_value">Lunes a viernes, 8:00 a 17:00</span></p>
             </div>
             <div class="card" id="ubicacion">
-                <h3>Dónde estamos</h3>
-                <p>San Cibrao das Viñas, Ourense</p>
+                <h3 data-i18n="location_title">Dónde estamos</h3>
+                <p data-i18n="location_city">San Cibrao das Viñas, Ourense</p>
                 <p>
-                    <a class="map-link" href="https://maps.app.goo.gl/ZF8ri1K6f6GwHktw5?g_st=ic" target="_blank" rel="noopener noreferrer">
+                    <a class="map-link" href="https://maps.app.goo.gl/ZF8ri1K6f6GwHktw5?g_st=ic" target="_blank" rel="noopener noreferrer" data-i18n="map_link">
                         Abrir en Google Maps
                     </a>
                 </p>
-                <p>Trabajamos con cita previa para darte atención rápida y personalizada.</p>
+                <p data-i18n="location_note">Trabajamos con cita previa para darte atención rápida y personalizada.</p>
             </div>
         </div>
     </section>
@@ -106,7 +110,7 @@
 
 <footer class="footer">
     <div class="container footer-wrap">
-        <p>© 2026 HBSport. Todos los derechos reservados.</p>
+        <p data-i18n="footer_copy">© 2026 HBSport. Todos los derechos reservados.</p>
         <div class="social">
             <a href="https://www.instagram.com/__hbsport?igsh=MWhiNzRnNnV6b2Rn" target="_blank" rel="noopener noreferrer" aria-label="Instagram de HBSport">Instagram</a>
         </div>
@@ -116,5 +120,102 @@
 <a class="wa-float" href="https://wa.me/34659667332" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
     WhatsApp
 </a>
+<script>
+const translations = {
+  es: {
+    nav_services: "Servicios",
+    nav_about: "Quiénes somos",
+    nav_contact: "Contacto",
+    nav_location: "Dónde estamos",
+    tag: "Taller multimarca",
+    hero_title: "Mecánica y chapa-pintura con trato cercano y resultados profesionales",
+    hero_lead: "En HBSport cuidamos tu vehículo como si fuera nuestro: diagnósticos claros, reparación honesta y acabados impecables.",
+    cta_booking: "Pedir cita",
+    services_title: "Servicios",
+    s1_t: "Escapes",
+    s1_d: "Montaje, reparación y homologación para mejorar rendimiento y sonido con total seguridad.",
+    s2_t: "Mecánica",
+    s2_d: "Diagnosis y reparación completa de motor, frenos, transmisión y mantenimiento general.",
+    s3_t: "Neumáticos",
+    s3_d: "Cambio de ruedas, equilibrado y alineación para una conducción precisa y estable.",
+    s4_t: "Suspensiones",
+    s4_d: "Revisión y sustitución de amortiguadores, muelles y componentes de suspensión.",
+    s5_t: "Chapa y pintura",
+    s5_d: "Reparación de golpes, pintura completa y retoques con acabados profesionales.",
+    s6_t: "Pulidos",
+    s6_d: "Corrección de pintura y pulido para recuperar brillo, profundidad y presencia.",
+    s7_t: "Restauraciones",
+    s7_d: "Trabajos de recuperación integral para devolver vida y estilo a tu vehículo.",
+    about_title: "Quiénes somos",
+    about_desc: "HBSport es un taller local especializado en mecánica y chapa-pintura. Apostamos por la transparencia, la comunicación directa y un trabajo bien hecho desde el primer día.",
+    contact_title: "Contacto",
+    contact_data: "Datos de contacto",
+    phone_label: "Teléfono / WhatsApp:",
+    hours_label: "Horario:",
+    hours_value: "Lunes a viernes, 8:00 a 17:00",
+    location_title: "Dónde estamos",
+    location_city: "San Cibrao das Viñas, Ourense",
+    map_link: "Abrir en Google Maps",
+    location_note: "Trabajamos con cita previa para darte atención rápida y personalizada.",
+    footer_copy: "© 2026 HBSport. Todos los derechos reservados."
+  },
+  gl: {
+    nav_services: "Servizos",
+    nav_about: "Quen somos",
+    nav_contact: "Contacto",
+    nav_location: "Onde estamos",
+    tag: "Taller multimarca",
+    hero_title: "Mecánica e chapa-pintura con trato próximo e resultados profesionais",
+    hero_lead: "En HBSport coidamos o teu vehículo coma se fose noso: diagnóstico claro, reparación honesta e acabados impecables.",
+    cta_booking: "Pedir cita",
+    services_title: "Servizos",
+    s1_t: "Escapes",
+    s1_d: "Montaxe, reparación e homologación para mellorar rendemento e son con total seguridade.",
+    s2_t: "Mecánica",
+    s2_d: "Diagnóstico e reparación completa de motor, freos, transmisión e mantemento xeral.",
+    s3_t: "Pneumáticos",
+    s3_d: "Cambio de rodas, equilibrado e aliñación para unha condución precisa e estable.",
+    s4_t: "Suspensións",
+    s4_d: "Revisión e substitución de amortecedores, muelles e compoñentes de suspensión.",
+    s5_t: "Chapa e pintura",
+    s5_d: "Reparación de golpes, pintura completa e retoques con acabados profesionais.",
+    s6_t: "Pulidos",
+    s6_d: "Corrección de pintura e pulido para recuperar brillo, profundidade e presenza.",
+    s7_t: "Restauracións",
+    s7_d: "Traballos de recuperación integral para devolver vida e estilo ao teu vehículo.",
+    about_title: "Quen somos",
+    about_desc: "HBSport é un taller local especializado en mecánica e chapa-pintura. Apostamos pola transparencia, a comunicación directa e un traballo ben feito desde o primeiro día.",
+    contact_title: "Contacto",
+    contact_data: "Datos de contacto",
+    phone_label: "Teléfono / WhatsApp:",
+    hours_label: "Horario:",
+    hours_value: "Luns a venres, 8:00 a 17:00",
+    location_title: "Onde estamos",
+    location_city: "San Cibrao das Viñas, Ourense",
+    map_link: "Abrir en Google Maps",
+    location_note: "Traballamos con cita previa para darche atención rápida e personalizada.",
+    footer_copy: "© 2026 HBSport. Todos os dereitos reservados."
+  }
+};
+
+function applyLang(lang) {
+  const dict = translations[lang] || translations.es;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+  localStorage.setItem("hbsport_lang", lang);
+}
+
+document.querySelectorAll(".lang-btn").forEach((btn) => {
+  btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+});
+
+applyLang(localStorage.getItem("hbsport_lang") || "es");
+</script>
 </body>
 </html>
