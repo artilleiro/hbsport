@@ -25,6 +25,10 @@ body {
     line-height: 1.5;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 h1, h2, h3 {
     font-family: "Space Grotesk", sans-serif;
     margin: 0 0 0.6rem;
@@ -222,6 +226,32 @@ h1 {
     color: #dfffe4;
 }
 
+.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card-plus {
+    border: 1px solid #2b5f3f;
+    background: #0b1a11;
+    color: var(--brand);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-plus:hover {
+    box-shadow: 0 0 14px rgba(57, 255, 20, 0.35);
+}
+
 .card p {
     color: var(--muted);
 }
@@ -276,6 +306,77 @@ h1 {
     transform: translateY(-1px);
 }
 
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.66);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    position: relative;
+    width: min(860px, 92vw);
+    max-height: 80vh;
+    margin: 10vh auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: linear-gradient(170deg, #0a110d 0%, #0f1a14 100%);
+    border: 1px solid #2a3f31;
+    overflow: hidden;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+    border: 1px solid #30533d;
+    background: #0a170f;
+    color: var(--ink);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin-top: 0.8rem;
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: clamp(220px, 34vh, 420px);
+    object-fit: cover;
+    border-radius: 0.7rem;
+    border: 1px solid #2a3f31;
+    background: #051008;
+}
+
+.modal-content.single-image {
+    width: min(640px, 90vw);
+}
+
+.modal-content.single-image .modal-gallery {
+    grid-template-columns: 1fr;
+}
+
+.modal-content.single-image .modal-gallery img {
+    max-width: 100%;
+}
+
 @media (max-width: 860px) {
     .menu {
         display: none;
@@ -311,6 +412,21 @@ h1 {
 
     .services-grid, .grid-2 {
         grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: min(560px, 92vw);
+        max-height: 78vh;
+        margin: 8vh auto;
+        padding: 0.9rem;
+    }
+
+    .modal-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-gallery img {
+        height: clamp(180px, 26vh, 280px);
     }
 
     .footer-wrap {

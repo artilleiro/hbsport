@@ -46,7 +46,10 @@
         <h2 data-i18n="services_title">Servicios</h2>
         <div class="services-grid">
             <article class="card">
-                <h3 data-i18n="s1_t">Escapes</h3>
+                <div class="card-head">
+                    <h3 data-i18n="s1_t">Escapes</h3>
+                    <button class="card-plus" type="button" data-gallery="escapes" data-service-title-key="s1_t" data-i18n-aria="open_gallery">+</button>
+                </div>
                 <p data-i18n="s1_d">Montaje, reparación y homologación para mejorar rendimiento y sonido con total seguridad.</p>
             </article>
             <article class="card">
@@ -58,11 +61,17 @@
                 <p data-i18n="s3_d">Cambio de ruedas, equilibrado y alineación para una conducción precisa y estable.</p>
             </article>
             <article class="card">
-                <h3 data-i18n="s4_t">Suspensiones</h3>
+                <div class="card-head">
+                    <h3 data-i18n="s4_t">Suspensiones</h3>
+                    <button class="card-plus" type="button" data-gallery="suspension" data-service-title-key="s4_t" data-i18n-aria="open_gallery">+</button>
+                </div>
                 <p data-i18n="s4_d">Revisión y sustitución de amortiguadores, muelles y componentes de suspensión.</p>
             </article>
             <article class="card">
-                <h3 data-i18n="s5_t">Chapa y pintura</h3>
+                <div class="card-head">
+                    <h3 data-i18n="s5_t">Chapa y pintura</h3>
+                    <button class="card-plus" type="button" data-gallery="pintura" data-service-title-key="s5_t" data-i18n-aria="open_gallery">+</button>
+                </div>
                 <p data-i18n="s5_d">Reparación de golpes, pintura completa y retoques con acabados profesionales.</p>
             </article>
             <article class="card">
@@ -70,7 +79,10 @@
                 <p data-i18n="s6_d">Corrección de pintura y pulido para recuperar brillo, profundidad y presencia.</p>
             </article>
             <article class="card">
-                <h3 data-i18n="s7_t">Restauraciones</h3>
+                <div class="card-head">
+                    <h3 data-i18n="s7_t">Restauraciones</h3>
+                    <button class="card-plus" type="button" data-gallery="restaura" data-service-title-key="s7_t" data-i18n-aria="open_gallery">+</button>
+                </div>
                 <p data-i18n="s7_d">Trabajos de recuperación integral para devolver vida y estilo a tu vehículo.</p>
             </article>
         </div>
@@ -120,6 +132,16 @@
 <a class="wa-float" href="https://wa.me/34659667332" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
     WhatsApp
 </a>
+
+<div class="modal" id="galleryModal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" data-modal-close data-i18n-aria="close_modal">x</button>
+        <h3 id="modalTitle"></h3>
+        <div class="modal-gallery" id="modalGallery"></div>
+    </div>
+</div>
+
 <script>
 const translations = {
   es: {
@@ -157,7 +179,9 @@ const translations = {
     location_city: "San Cibrao das Viñas, Ourense",
     map_link: "Abrir en Google Maps",
     location_note: "Trabajamos con cita previa para darte atención rápida y personalizada.",
-    footer_copy: "© 2026 HBSport. Todos los derechos reservados."
+    footer_copy: "© 2026 HBSport. Todos los derechos reservados.",
+    open_gallery: "Abrir galería",
+    close_modal: "Cerrar ventana"
   },
   gl: {
     nav_services: "Servizos",
@@ -194,8 +218,17 @@ const translations = {
     location_city: "San Cibrao das Viñas, Ourense",
     map_link: "Abrir en Google Maps",
     location_note: "Traballamos con cita previa para darche atención rápida e personalizada.",
-    footer_copy: "© 2026 HBSport. Todos os dereitos reservados."
+    footer_copy: "© 2026 HBSport. Todos os dereitos reservados.",
+    open_gallery: "Abrir galería",
+    close_modal: "Pechar xanela"
   }
+};
+
+const galleries = {
+  escapes: ["assets/images/escapes_1.png"],
+  suspension: ["assets/images/suspension.png"],
+  pintura: ["assets/images/pintura_1.png", "assets/images/pintura_2.png"],
+  restaura: ["assets/images/restaura_1.png", "assets/images/restaura_2.jpg"]
 };
 
 function applyLang(lang) {
@@ -208,11 +241,59 @@ function applyLang(lang) {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
+  document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-aria");
+    if (dict[key]) el.setAttribute("aria-label", dict[key]);
+  });
   localStorage.setItem("hbsport_lang", lang);
 }
 
 document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+});
+
+const modal = document.getElementById("galleryModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalGallery = document.getElementById("modalGallery");
+
+function openGallery(galleryKey, serviceKey) {
+  const lang = localStorage.getItem("hbsport_lang") || "es";
+  const dict = translations[lang] || translations.es;
+  const images = galleries[galleryKey] || [];
+  const serviceName = dict[serviceKey] || "";
+
+  modalTitle.textContent = serviceName;
+  modalGallery.innerHTML = images
+    .map((src, index) => `<img src="${src}" alt="${serviceName} ${index + 1}" loading="lazy">`)
+    .join("");
+  modal.querySelector(".modal-content").classList.toggle("single-image", images.length === 1);
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  modal.querySelector(".modal-content").classList.remove("single-image");
+  document.body.classList.remove("no-scroll");
+}
+
+document.querySelectorAll(".card-plus").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    openGallery(btn.dataset.gallery, btn.dataset.serviceTitleKey);
+  });
+});
+
+document.querySelectorAll("[data-modal-close]").forEach((el) => {
+  el.addEventListener("click", closeModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal.classList.contains("open")) {
+    closeModal();
+  }
 });
 
 applyLang(localStorage.getItem("hbsport_lang") || "es");
